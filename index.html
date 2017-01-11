@@ -1,13 +1,12 @@
 <meta name="viewport" content="width=620" />
 <title>geolocation</title>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <article>
-      <p>Finding your location: <span id="status">checking...</span></p>
-    </article>
+<body>
+  <div id="status">checking...</div>
+</body>
 <script>
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(){
-      document.querySelector('#status').innerText(arguments);
+      document.getElementById('status').innerHTML = JSON.stringify(arguments);
   });
 } else {
   alert('not supported');
