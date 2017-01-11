@@ -6,7 +6,7 @@
 <script>
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(pos){
-      document.getElementById('status').innerHTML = 'PPosition: ' + JSON.stringify(pos.coords);
+      document.getElementById('status').innerHTML = 'PPPosition: ' + JSON.stringify({latitude: pos.coords.latitude, longitude:pos.coords.longitude});
   }, alert, {enableHighAccuracy:true, timeout: Infinity, maximumAge: Infinity});
 } else {
   alert('not supported');
