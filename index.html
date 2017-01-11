@@ -1,13 +1,13 @@
 <meta name="viewport" content="width=620" />
 <title>geolocation</title>
 <body>
-  <div id="status">checking...</div>
+  <div id="status">Checking...</div>
 </body>
 <script>
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(){
       document.getElementById('status').innerHTML = JSON.stringify(arguments);
-  });
+  }, alert, {enableHighAccuracy:true, timeout: Infinity, maximumAge: Infinity});
 } else {
   alert('not supported');
 }
