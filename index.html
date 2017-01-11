@@ -5,8 +5,8 @@
 </body>
 <script>
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(){
-      document.getElementById('status').innerHTML = 'Position: ' + JSON.stringify(arguments);
+  navigator.geolocation.getCurrentPosition(function(pos){
+      document.getElementById('status').innerHTML = 'Position: ' + JSON.stringify(pos.coords);
   }, alert, {enableHighAccuracy:true, timeout: Infinity, maximumAge: Infinity});
 } else {
   alert('not supported');
